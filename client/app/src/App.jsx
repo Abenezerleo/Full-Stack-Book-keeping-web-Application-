@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+// Reads from environment variable on Vercel; falls back to localhost during local development
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+
 function App() {
   const [books, setBooks] = useState([])
   const [title, setTitle] = useState('')
@@ -13,7 +16,7 @@ function App() {
 
   const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/books/')
+      const response = await fetch(`${API_BASE}/api/books/`)
       const data = await response.json()
       setBooks(data)
     } catch (error) {
@@ -28,14 +31,11 @@ function App() {
     }
 
     try {
-      const response = await fetch(
-        'http://localhost:8000/api/books/create/',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(bookData),
-        }
-      )
+      const response = await fetch(`${API_BASE}/api/books/create/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookData),
+      })
 
       const data = await response.json()
       setBooks((prev) => [...prev, data])
@@ -54,14 +54,11 @@ function App() {
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:8000/api/books/${pk}/`,
-        {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(bookData),
-        }
-      )
+      const response = await fetch(`${API_BASE}/api/books/${pk}/`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bookData),
+      })
 
       const data = await response.json()
 
@@ -83,7 +80,7 @@ function App() {
 
   const deleteBook = async (pk) => {
     try {
-      await fetch(`http://localhost:8000/api/books/${pk}/`, {
+      await fetch(`${API_BASE}/api/books/${pk}/`, {
         method: 'DELETE',
       })
 
