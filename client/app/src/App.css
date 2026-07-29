@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #1e293b;
+  margin-bottom: 18px; /* Added more space */
+  line-height: 1.2;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* FORM */
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 240px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-container input:focus {
+  border-color: #2563eb;
+}
+
+/* ADD BUTTON */
+
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+/* TABLE */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+th {
+  background: #1e293b;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+td input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  min-width: 140px;
+}
+
+/* BUTTON GROUP */
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.update-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.update-btn:hover {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 25px;
+  color: #555;
+}
+
+.footer p {
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.hire-btn {
+  display: inline-block;
+  background: #111827;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.hire-btn:hover {
+  background: #000;
+}
+
+/* ========================= */
+/* TABLET RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 2.4rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .form-container {
+    padding: 18px;
+  }
+
+  .form-container input {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 14px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .form-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .form-container input {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .table-container {
+    padding: 12px;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  td input {
+    min-width: 120px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .update-btn,
+  .delete-btn {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer p {
+    font-size: 0.95rem;
+  }
+
+  .hire-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
