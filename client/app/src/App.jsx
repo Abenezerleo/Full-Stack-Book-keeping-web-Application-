@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 // Reads from environment variable on Vercel; falls back to localhost during local development
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+const API_BASE = 'https://full-stack-book-keeping-web-application.onrender.com'
 
 function App() {
   const [books, setBooks] = useState([])
